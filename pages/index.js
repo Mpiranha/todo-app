@@ -7,7 +7,7 @@ const Index = (props) => (
     <div className="container">
      
       <App/>
-      <h1>Todo's</h1>
+      <h1>Long Term Goals</h1>
       <ul>
         {props.items.map(todo => (
           <li key={todo.id}>
@@ -32,14 +32,13 @@ Index.getInitialProps = async function() {
   const data = await res.json();
 
   console.log(`Show data fetched. Count: ${data.length}`);
-  console.log(`Show data fetched. Count: ${data.id}`);
+  console.log(`Show data fetched. Count: ${JSON.stringify(data)}`);
 
   return {
-    items: data.map(entry => entry.todos)
+    items: data.map(entry => entry.todos[0])
   }
 }
 
-Index.getInitialProps();
 
 export default Index
   
