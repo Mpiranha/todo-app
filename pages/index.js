@@ -1,5 +1,4 @@
 import App from './App';
-import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 
 
@@ -33,7 +32,7 @@ Index.getInitialProps = async function() {
   const data = await res.json();
 
   console.log(`Show data fetched. Count: ${data.length}`);
-  console.log(`Show data fetched. Count: ${data}`);
+  console.log(`Show data fetched. Count: ${data.id}`);
 
   return {
     items: data.map(entry => entry.todos)
