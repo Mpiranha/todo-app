@@ -24,6 +24,8 @@ const btnStyle = {
     padding: '5px 10px'
 }
 
+
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -32,6 +34,17 @@ export default class App extends Component {
       items: []
     };
     this.removeTodo = this.removeTodo.bind(this);
+    
+  }
+
+  
+
+  
+
+  
+
+  componentDidMount() {
+    this.setState({ items: [...this.props.online] });
   }
 
   onChange = (event) => {
@@ -67,4 +80,7 @@ export default class App extends Component {
     );
   }
 }
+
+
+
 
