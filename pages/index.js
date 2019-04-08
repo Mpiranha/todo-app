@@ -1,8 +1,43 @@
 import App from './App';
-const Index = () => (
+import fetch from 'isomorphic-unfetch';
+
+
+
+const Index = (props) => (
     <div className="container">
-      <App/>
-    </div>
+     
+      <App online=
+        {
+          props.items.map(todo => (
+          
+              todo.content
+        ))
+      } />
+      </div>
+      /* <ul>
+        
+      </ul> */
+    
   )
+
   
-  export default Index
+
+
+
+
+Index.getInitialProps = async function() {
+ 
+  const res = await fetch('http://localhost:3000/todos');
+  const data = await res.json();
+
+  console.log(`Show data fetched. Count: ${data.length}`);
+  console.log(`Show data fetched. Count: ${JSON.stringify(data)}`);
+
+  return {
+    items: data.map(entry => entry)
+  }
+}
+
+
+export default Index
+  

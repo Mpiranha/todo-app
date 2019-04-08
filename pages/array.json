@@ -1,0 +1,16 @@
+{
+    "todos": [
+      {
+        "id": 1,
+        "content": "Get to the Market"
+      },
+      {
+        "id": 2,
+        "content": "Get a Mac"
+      },
+      {
+        "id": 3,
+        "content": "Finish the remaining project"
+      }
+    ]
+}

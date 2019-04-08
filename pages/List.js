@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import fetch from 'isomorphic-unfetch';
 
 const ulStyle = {
     padding: '0',
@@ -35,6 +36,7 @@ const delStyle = {
 
 
 export default class List extends Component {
+    
     removeItem(item, i) {
         this.props.removeTodo(item, i);
     }
@@ -42,17 +44,21 @@ export default class List extends Component {
     render() {
         return(
             
-            <ul style={ulStyle}>
+                <ul style={ulStyle}>
                 {
-
                 this.props.items.map((item, index) => <li style={listStyle} key={index}>{item}
                     <button onClick={() => this.removeItem(item, index)} style={delStyle}>X</button>
                 </li>)
                 }
-            </ul>
+                
+                </ul>
+            
+            
         );
     }
 }
+
+
 
 
 
